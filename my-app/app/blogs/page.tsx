@@ -11,7 +11,7 @@ interface ITodos {
 const page = async () => {
     const todos:ITodos[] = await getBlogs()
     return (
-        <div>
+        <div> 
             <h1 className="text-4xl text-center my-4">The best blogs for you</h1>
             {todos.map(todo=>{
                 if(todo.completed){
