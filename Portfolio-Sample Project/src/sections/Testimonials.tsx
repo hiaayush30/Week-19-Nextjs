@@ -2,6 +2,7 @@ import { FC } from "react";
 import image1 from "@/assets/images/testimonial-1.jpg";
 import image2 from "@/assets/images/testimonial-2.jpg";
 import image3 from "@/assets/images/testimonial-3.jpg";
+import Image from "next/image";
 
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const testimonials = [
@@ -35,7 +36,43 @@ const testimonials = [
 ];
 
 const Testimonials: FC = () => {
-  return <div>Testimonials</div>;
+  return <section className="section">
+    <h2 className="text-4xl flex flex-col">
+      <span className="whitespace-nowrap overflow-hidden">Some nice words from my past clients</span>
+      <span className="whitespace-nowrap overflow-hidden self-end text-red-orange-500">Some nice words from my past clients</span>
+    </h2>
+    <div className="container">
+      <div className="mt-20">
+        {testimonials.map(({ name, company, image, quote, role,imagePositionY }) => {
+          return <div key={name}>
+            <div className="aspect-square">
+              <Image className="size-full object-cover" style={{
+                objectPosition:`50% ${imagePositionY*100}%`
+              }}
+              src={image} alt={name} />
+            </div>
+            <blockquote>
+              <div>{quote}</div>
+              <cite>{name},{role} at {company}</cite>
+            </blockquote>
+          </div>
+        })}
+      </div>
+      <div>
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+
+        </button>
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
 };
 
 export default Testimonials;
