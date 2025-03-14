@@ -1,3 +1,5 @@
+- `The objectPosition property` in CSS determines the position of an image inside its container when using object-fit: cover. It controls which part of the image remains visible when the image is cropped to fit the container.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
