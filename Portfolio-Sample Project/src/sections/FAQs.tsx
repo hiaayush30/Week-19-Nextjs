@@ -25,7 +25,7 @@ const faqs = [
 ];
 
 const FAQs: FC = () => {
-  return <section className="container">
+  return <section id="faqs" className="container">
     <h2 className="text-4xl md:text-7xl lg:text-8xl mb-6 md:mt-12">FAQs</h2>
     <div>
       {faqs.map(faq => (
