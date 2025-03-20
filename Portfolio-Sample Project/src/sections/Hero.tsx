@@ -8,7 +8,7 @@ import SplitType from "split-type";
 import { useAnimate, motion, stagger } from "motion/react";
 
 const Hero: FC = () => {
-  const [titleScope, titleAnimate] = useAnimate();
+  const [titleScope, titleAnimate] = useAnimate();  //titleScope is like useRef
 
   useEffect(() => {
     new SplitType(titleScope.current, {
